@@ -39,11 +39,3 @@ body:
       placeholder: https://github.com/nvdaes/placeMarkers
     validations:
       required: true
-  - type: checkboxes
-    id: dev
-    attributes:
-      label: Dev link like stable
-      description: The destination for development and stable link is the same
-      options:
-        - label: Use same destination link for dev and stable
-          required: true
