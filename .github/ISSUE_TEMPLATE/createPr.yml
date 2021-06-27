@@ -28,6 +28,6 @@ body:
     attributes:
       label: Version
       description: Add-on version
-      placeholder: 16.1
+      placeholder: "16.1"
     validations:
       required: true
