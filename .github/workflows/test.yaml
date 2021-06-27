@@ -1,0 +1,21 @@
+name: test
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Echo title
+      env:
+        VERSION: ${{ github.event.issue.version }}
+      run:
+        echo "$VERSION"
