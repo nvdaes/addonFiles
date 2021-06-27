@@ -53,5 +53,5 @@ body:
       label: Destination link for dev like stable
       description: Dev link destination should be set to match stable link
       options:
-        - Label: Dev link destination matches stable link destination
-          required: true
+        - label: Dev link destination matches stable link destination
+          required: false
