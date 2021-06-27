@@ -31,3 +31,27 @@ body:
       placeholder: "16.1"
     validations:
       required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Repo
+      description: Add-on repository
+      placeholder: https://github.com/nvdaes/clipContentsDesigner
+    validations:
+      required: true
+  - type: input
+    id: key
+    attributes:
+      label: Key
+      description: Key in get.php
+      placeholder: ccd
+    validations:
+      required: true
+  - type: checkboxes
+    id: dev
+    attributes:
+      label: Destination link for dev like stable
+      description: Dev link destination should be set to match stable link
+      options:
+        - Label: Dev link destination matches stable link destination
+          required: true
