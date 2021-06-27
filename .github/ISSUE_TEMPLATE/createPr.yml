@@ -47,7 +47,7 @@ body:
       placeholder: ccd
     validations:
       required: true
-- type: checkboxes
+  - type: checkboxes
     id: updateDev
     attributes:
       label: Dev link like stable
