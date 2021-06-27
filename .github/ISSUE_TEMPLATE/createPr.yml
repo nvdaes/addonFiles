@@ -1,6 +1,6 @@
 name: Update add-on
 description: Update an NVDA add-on
-title: "[Add-on]: "
+title: "Updated add-on"
 
 body:
   - type: markdown
@@ -23,3 +23,27 @@ body:
       placeholder: Jon Doe
     validations:
       required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Add-on version
+      placeholder: 16.1
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Repo
+      description: Add-on repository
+      placeholder: https://github.com/nvdaes/placeMarkers
+    validations:
+      required: true
+  - type: checkboxes
+    id: dev
+    attributes:
+      label: Dev link like stable
+      description: The destination for development and stable link is the same
+      options:
+        - label: Use same destination link for dev and stable
+          required: true
