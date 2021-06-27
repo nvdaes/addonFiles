@@ -1,0 +1,24 @@
+name: Send an add-on
+description: Send an NVDA add-on
+title: "Release information"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        "##Release information"
+  - type: input
+    id: name
+    attributes:
+      label: Add-on name
+      description: The name of your add-on
+      placeholder: clipContentsDesigner
+    validations:
+      required: true
+    id: version
+    attributes:
+      label: Version
+      description: Add-on version
+      placeholder: 16.1
+    validations:
+      required: true
