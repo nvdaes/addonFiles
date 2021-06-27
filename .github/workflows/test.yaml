@@ -16,6 +16,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Echo title
       env:
-        VERSION: ${{ github.event.issue.version }}
+        VERSION: ${{ github.event.issue.body }}
       run:
         echo "$VERSION"
