@@ -23,27 +23,3 @@ body:
       placeholder: Jon Doe
     validations:
       required: true
-  - type: input
-    id: version
-    attributes:
-      label: Version
-      description: Add-on version
-      placeholder: 16.1
-    validations:
-      required: true
-  - type: input
-    id: repo
-    attributes:
-      label: Repository
-      description: Add-on repository
-      placeholder: https://github.com/nvdaes/placeMarkers
-    validations:
-      required: true
-  - type: input
-    id: key
-    attributes:
-      label: Key
-      description: Key in get.php
-      placeholder: ccd
-    validations:
-      required: true
