@@ -54,5 +54,4 @@ body:
       description: The destination link for dev is like stable
       options:
         - label: The destination for dev and stable download links are the same
-    validations:
-      required: false
+          required: false
