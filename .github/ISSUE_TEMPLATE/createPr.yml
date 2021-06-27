@@ -1,6 +1,6 @@
 name: Send an add-on
 description: Send an NVDA add-on
-title: "Release information"
+title: "Update add-on
 
 body:
   - type: markdown
