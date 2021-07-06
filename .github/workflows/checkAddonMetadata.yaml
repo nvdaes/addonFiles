@@ -22,7 +22,9 @@ jobs:
         python-version: 3.7
         architecture: x86
     - name: Validate metadata
-      import sys
-      import os
-      sis.path.append(os.path.join("$GITHUB_WORKSPACE", "validate"))
-      import validate
+      run: |
+        import sys
+        import os
+        sys.path.append(os.path.join("$GITHUB_WORKSPACE", "validate"))
+        import validate
+      shell: python
