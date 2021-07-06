@@ -1,0 +1,28 @@
+name: Check submitted NVDA add-on
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+
+jobs:
+
+  checkMetadata:
+  
+    runs-on: windows-latest
+
+    steps:
+    
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.7 x86
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+        architecture: x86
+    - name: Validate metadata
+      import sys
+      import os
+      sis.path.append(os.path.join("$GITHUB_WORKSPACE", "validate"))
+      import validate
