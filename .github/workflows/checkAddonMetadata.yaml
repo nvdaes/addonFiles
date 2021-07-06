@@ -21,5 +21,11 @@ jobs:
       with:
         python-version: 3.7
         architecture: x86
+    - name: Checkout validate add-on metadata
+      uses: actions/checkout@v2    
+      with:
+        ref: addonFiles
+        submodules: true
+        path: validate
     - name: Validate metadata
-      run: python _validate/validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+      run: python validate/_validate/validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
