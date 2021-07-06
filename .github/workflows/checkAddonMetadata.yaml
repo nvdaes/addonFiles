@@ -27,16 +27,7 @@ jobs:
         repository: nvdaes/validateNvdaAddonMetadata
         ref: addonFiles
         path: validate
-    - name: Checkout configobj
-      uses: actions/checkout@v2    
-      with:
-        repository: DiffSK/configobj
-        fetch-depth: 0
-        submodules: true
-        path: validate/_validate/configobj
     - name: Validate metadata
       run: |
-        cd validate\_validate\configobj
-        git checkout f9a265c4
-        cd..
-        python validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+        runvalidate https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+      shell: cmd
