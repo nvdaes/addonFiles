@@ -1,0 +1,51 @@
+name: Create post
+
+on:
+  issues:
+    types: 
+      - opened
+      - reopened
+
+jobs:
+  add-post:
+    name: Add post
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Get data
+      id: get-data
+      uses: actions/github-script@v4
+      with:
+        script: |
+          const number = context.payload.issue.number.toString()
+          core.setOutput('number', "#" + number)
+          core.setOutput('branch', "issue" + number)
+          const title = context.payload.issue.title
+          core.setOutput('filename', "_posts/" + title + ".md")
+          const author = context.payload.issue.user.login
+          const body = context.payload.issue.body   
+          const header = `---
+          title: 
+          permalink: "/x/"
+          layout: post
+          commentsId: 0
+          author: 
+          ---
+          `
+          core.setOutput('body', header + body)
+          console.log(author)
+    - name: Commit changes
+      run: |
+        echo "${{steps.get-data.outputs.body}}" > ${{steps.get-data.outputs.filename}}
+        git add .
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        branch: ${{steps.get-data.outputs.branch}}
+        delete-branch: true
+        body: |
+          Post by "${{steps.get-data.outputs.author}}"
+          - Title: "${{steps.get-data.outputs.title}}"
+          - Closes "${{steps.get-data.outputs.number}}"
+        reviewers: nvdaes
