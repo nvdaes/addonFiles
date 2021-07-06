@@ -1,0 +1,43 @@
+name: Addon registration
+description: Request the registration of an add-on to be included on the community add-ons website
+title: "[Register add-on on the official website]: "
+labels:
+assignees: 
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      Request registration for an add-on to be included on the community add-ons website. Provide the download URL, and mark the checkbox confirming that you've reviewed and tested it according to our processes.
+- type: input
+  id: addon-url
+  attributes:
+    label: Download URL
+    description: The URL of a direct link to download the add-on. It should start with https and ends with .nvda-addon
+    placeholder: Example: https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+  validations:
+    required: true
+- type: input
+  id: addon-maintainer
+  attributes:
+    label: Add-on maintainer
+    description: If you aren't the add-on maintainer, mention the corresponding GitHub username
+    placeholder: "Example: @nvdaAddonMaintainer"
+  validations:
+    required: false
+- type: input
+  id: addon-repo
+  attributes:
+    label: Add-on repository
+    description: The add-on repository
+    placeholder: Example: https://github.com/nvdaes/clipContentsDesigner
+  validations:
+    required: false
+- type: checkboxes
+  id: terms
+  attributes:
+    label: Terms of use
+    description: Confirm that you have tested and reviewed the add-on according to our processes.
+    options:
+      - label: The add-on has been tested and reviewed according to processes
+        required: true
