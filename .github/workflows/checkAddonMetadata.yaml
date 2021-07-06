@@ -29,7 +29,7 @@ jobs:
     - name: Checkout configobj
       uses: actions/checkout@v2    
       with:
-        repository: DiffSK/configobj: 
+        repository: DiffSK/configobj
         path: validate/_validate/configobj
         ref: f9a265c4
     - name: Validate metadata
