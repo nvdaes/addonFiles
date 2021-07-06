@@ -4,6 +4,7 @@
 # This file may be used under the terms of the GNU General Public License, version 2 or later.
 # For more details see: https://www.gnu.org/licenses/gpl-2.0.html
 
+import argparse
 import os
 import sys
 import tempfile
@@ -61,3 +62,16 @@ def getAddonManifest(destPath):
 	except Exception as err:
 		raise err
 
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument(
+		dest="file",
+		help="The add-on download URL."
+	)
+	args = parser.parse_args()
+	url = args.file
+	destPath = downloadAddon(url=url)
+	manifest = _getAddonManifest(destPath=destPath)
+
+if __name__ == '__main__':
+	main()

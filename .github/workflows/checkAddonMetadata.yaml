@@ -22,9 +22,4 @@ jobs:
         python-version: 3.7
         architecture: x86
     - name: Validate metadata
-      run: |
-        import sys
-        import os
-        sys.path.append(os.path.join("$GITHUB_WORKSPACE", "validate"))
-        from validate import validate
-      shell: python
+      run: python validateNvdaAddonMetadata/_validate/validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
