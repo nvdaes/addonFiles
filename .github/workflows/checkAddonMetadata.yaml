@@ -24,6 +24,7 @@ jobs:
     - name: Checkout validate add-on metadata
       uses: actions/checkout@v2    
       with:
+        repository: nvdaes/validateNvdaAddonMetadata
         ref: addonFiles
         path: validate
     - name: Checkout configobj
