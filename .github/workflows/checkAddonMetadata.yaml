@@ -32,7 +32,7 @@ jobs:
       with:
         repository: DiffSK/configobj
         submodules: true
-        path: validate/_validate/configobj
+        path: validate/_validate
     - name: Validate metadata
       run: |
         cd validate\_validate\configobj
