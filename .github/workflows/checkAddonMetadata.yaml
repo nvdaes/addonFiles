@@ -32,6 +32,9 @@ jobs:
       with:
         repository: DiffSK/configobj
         path: validate/_validate/configobj
-        ref: f9a265c4
     - name: Validate metadata
-      run: python validate/_validate/validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+      run: |
+        cd validate\validate\configobj
+        git checkout f9a265c4
+        cd..
+        pyhthon validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
