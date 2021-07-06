@@ -39,4 +39,4 @@ jobs:
         cd validate\_validate\configobj
         git checkout f9a265c4
         cd..
-        pyhthon validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
+        python validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
