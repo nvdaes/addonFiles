@@ -35,7 +35,7 @@ jobs:
         path: validate/_validate/configobj
     - name: Validate metadata
       run: |
-        cd validate\validate\configobj
+        cd validate\_validate\configobj
         git checkout f9a265c4
         cd..
         pyhthon validate.py https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
