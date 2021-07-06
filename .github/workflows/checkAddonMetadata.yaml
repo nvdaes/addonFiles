@@ -31,8 +31,9 @@ jobs:
       uses: actions/checkout@v2    
       with:
         repository: DiffSK/configobj
+        fetch-depth: 0
         submodules: true
-        path: validate/_validate
+        path: validate/_validate/configobj
     - name: Validate metadata
       run: |
         cd validate\_validate\configobj
