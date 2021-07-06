@@ -26,5 +26,5 @@ jobs:
         import sys
         import os
         sys.path.append(os.path.join("$GITHUB_WORKSPACE", "validate"))
-        import validate
+        from validate import validate
       shell: python
