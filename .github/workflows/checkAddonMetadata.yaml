@@ -34,12 +34,12 @@ jobs:
       run: npm install fs
     - name: Comment
       uses: actions/github-script@v4
-        with:
-          script: |
-            const fs = require('fs')
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: fs.readFileSync('_validate/metadata.txt')
-            })
+      with:
+        script: |
+          const fs = require('fs')
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: fs.readFileSync('_validate/metadata.txt')
+          })
