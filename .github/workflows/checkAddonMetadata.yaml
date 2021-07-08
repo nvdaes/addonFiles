@@ -30,3 +30,16 @@ jobs:
       run: |
         runvalidate https://github.com/nvdaes/clipContentsDesigner/releases/download/14.0/clipContentsDesigner-14.0.nvda-addon
       shell: cmd
+    - name: Install fs
+      run: npm install fs
+    - name: Comment
+      uses: actions/github-script@v4
+        with:
+          script: |
+            const fs = require('fs')
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: fs.readFileSync('_validate/metadata.txt')
+            })
